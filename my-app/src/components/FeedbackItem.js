@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from 'react'
-
+import Card from './Shared/Card'
 // bài 3 là chỉ cách xài useState
 
 function FeedbackItem({ item}) {
@@ -16,13 +16,13 @@ function FeedbackItem({ item}) {
     }
 
   return (
-    <div className="card">
+    <Card>
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
       <button type="button" onClick={handleClick}>
         Click
       </button>
-    </div>
+    </Card>
   );
 }
 
