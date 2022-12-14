@@ -1,41 +1,13 @@
-function App(){
-    const title = "Blog post"
-    const body = "body blog"
-    const comments = [
-        {id:1, text: 'Hello1'},
-        {id:2, text: 'Hello2'},
-        {id:3, text: 'Hello3'},
-    ]
+import Header from "./components/Header"
 
-    const loading = false
-
-    const showComment = true
-
-    const commentBlock = (
-        <div className="comments">
-              <h3>Comments ({comments.length})</h3>
-              <ul>
-                {comments.map((comment, index) => (
-                  <li key={index}>{comment.text}</li>
-                ))}
-              </ul>
-            </div>
-    )
-
-    if (loading) { 
-        return <h1>Loading...</h1>
-    }
-
+// truyền cái props text wa header, nó có hỗ trợ propsDefault nếu ko có text
+// và có hỗ trợ thư viện loại props truyền qua là string hay boolean
+function App() {
     return (
-      <>
+        <>
+            <Header bgColor='red' textColor='blue' />
         <div className="container">
-          <h1>{title}</h1>
-          <p>{body}</p>
-          {showComment ? (
-            commentBlock
-          ) : (
-            "no"
-          )}
+          <h1>My App</h1>
         </div>
       </>
     ); 
