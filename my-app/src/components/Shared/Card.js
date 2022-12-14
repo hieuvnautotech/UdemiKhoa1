@@ -1,9 +1,9 @@
-import React from 'react'
+import React from "react";
 
-function Card() {
-  return (
-    <div>Card</div>
-  )
+// bài này chỉ cách tạo từng component share
+
+function Card({ children, reverse }) {
+  return <div className={`card ${reverse && 'reverse'}`}>{children}</div>;
 }
 
-export default Card
+export default Card;
