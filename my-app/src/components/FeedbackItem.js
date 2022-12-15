@@ -1,5 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import Card from './Shared/Card'
+import PropTypes from "prop-types";
+
 // bài 3 là chỉ cách xài useState
 
 function FeedbackItem({ item}) {
@@ -16,7 +18,7 @@ function FeedbackItem({ item}) {
     }
 
   return (
-      <Card reverse={true}>
+      <Card reverse={false}>
       <div className="num-display">{item.rating}</div>
       <div className="text-display">{item.text}</div>
       <button type="button" onClick={handleClick}>
@@ -24,6 +26,10 @@ function FeedbackItem({ item}) {
       </button>
     </Card>
   );
+}
+
+FeedbackItem.propTypes = {
+  item: PropTypes.object.isRequired,
 }
 
 export default FeedbackItem
