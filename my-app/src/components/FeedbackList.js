@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 // bài này chỉ cách xài hàm .map
 
-function FeedbackList({ feedback }) {
+function FeedbackList({ feedback, handleDelete }) {
     if (!feedback || feedback.length === 0) { 
         return <p>no feedback yet</p>
     }
@@ -13,7 +13,10 @@ function FeedbackList({ feedback }) {
       <div className="feedback-list">
         {feedback.map((item) => (
         //   <div>{item.rating}</div>
-            <FeedbackItem key={item.id} item={ item} />
+            <FeedbackItem key={item.id} item={ item} 
+            handleDelete = {handleDelete}/>
+            // handleDelete={(id)=>console.log(id)} 
+            
         ))}
       </div>
     );
