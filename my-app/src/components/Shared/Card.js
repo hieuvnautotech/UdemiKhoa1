@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-// bài này chỉ cách tạo từng component share
+// bài này chỉ cách tạo từng component share, thì phải có children
+//và defaultprop cũng như propTypes 
 
 function Card({ children, reverse }) {
   // return <div className={`card ${reverse && 'reverse'}`}>{children}</div>;
