@@ -21,7 +21,6 @@ function FeedbackForm() {
               onChange={handleTextChange}
               value={text}
             />
-            {/* <button type="submit">Send</button> */}
             <Button type='submit'>
                 Send
             </Button>
