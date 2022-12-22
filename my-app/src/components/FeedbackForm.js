@@ -60,7 +60,7 @@ function FeedbackForm({handleAdd}) {
         </form>
       </Card>
     
-  );
+  )
 }
 
-export default FeedbackForm;
+export default FeedbackForm
