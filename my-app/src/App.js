@@ -8,7 +8,8 @@ import FeedbackForm from "./components/FeedbackForm"
 import {v4 as uuidv4} from 'uuid'
 import AboutPage from "./pages/AboutPage"
 import AboutIconLink from './components/AboutIconLink'
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
+import Post from './components/Post'
+import {BrowserRouter as Router, Route, Routes, NavLink} from 'react-router-dom'
 // truyền cái props text wa header, nó có hỗ trợ propsDefault nếu ko có text
 // và có hỗ trợ thư viện loại props truyền qua là string hay boolean
 //bài này thì nhớ cài npm i react-router-dom
@@ -50,8 +51,18 @@ function App() {
             }
             ></Route>
           <Route path="/about" element={<AboutPage/>}/>
+          <Route path="/post/:id/:name" element={<Post/>}/>
 
         </Routes>
+
+        {/* <Card>
+          <NavLink to='/' activeClassName='active'>
+            Home
+          </NavLink>
+          <NavLink to='/about' activeClassName='active'>
+            About
+          </NavLink>
+        </Card> */}
       </div>
     </Router>
   )
