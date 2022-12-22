@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../components/Shared/Card'
-
+// chuong 5 bài 1 quên tạo branch
 function AboutPage() {
   return (
     <Card>
