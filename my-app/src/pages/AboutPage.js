@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from '../components/Shared/Card'
-// chuong 5 bài 1 quên tạo branch
+// chuong 5 bài 1 quên tạo branch, bài 2 thì chỉ là cập nhật route
 function AboutPage() {
   return (
     <Card>
