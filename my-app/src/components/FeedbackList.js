@@ -7,7 +7,7 @@ import FeedbackContext from "../context/FeedbackContext"
 // bài này chỉ cách xài hàm .map
 // bài này chỉ cài npm i framer-motion@4.1.17
 // rồi import vào đây
-function FeedbackList({ handleDelete }) {
+function FeedbackList() {
   const {feedback} = useContext(FeedbackContext)
 
   if (!feedback || feedback.length === 0) {
@@ -28,7 +28,7 @@ function FeedbackList({ handleDelete }) {
             <FeedbackItem
               key={item.id}
               item={item}
-              handleDelete={handleDelete}
+              
             />
             {/* handleDelete={(id) => console.log(id)} */}
           </motion.div>
