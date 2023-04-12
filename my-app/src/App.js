@@ -15,21 +15,12 @@ import {BrowserRouter as Router, Route, Routes, NavLink} from 'react-router-dom'
 // và có hỗ trợ thư viện loại props truyền qua là string hay boolean
 //bài này thì nhớ cài npm i react-router-dom
 function App() {
-  const [feedback, setFeedback] = useState(FeedbackData)
+  
 
-  const addFeedback = (newFeedback) => {
-    newFeedback.id = uuidv4()
-    // console.log(newFeedback)
-    setFeedback([newFeedback,...feedback])
-  }
+  
 
 
-  const deleteFeedback = (id) => {
-    // console.log('App', id)
-    if (window.confirm("Are you sure you want to delete")) {
-      setFeedback(feedback.filter((item) => item.id !== id))
-    }
-  }
+  
 
 
   return (
@@ -45,9 +36,9 @@ function App() {
             path="/"
             element={
               <>
-                  <FeedbackForm  handleAdd={addFeedback}/>
+                  <FeedbackForm />
                   <FeedbackStats />
-                  <FeedbackList handleDelete={deleteFeedback}/>
+                  <FeedbackList />
                   <AboutIconLink/>
               </>
             }
