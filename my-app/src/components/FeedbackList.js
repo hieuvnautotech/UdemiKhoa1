@@ -4,17 +4,21 @@ import FeedbackItem from "./FeedbackItem"
 import { motion, AnimatePresence } from "framer-motion"
 import {useContext} from 'react'
 import FeedbackContext from "../context/FeedbackContext"
+import Spinner from './Shared/Spinner'
+
 // bài này chỉ cách xài hàm .map
 // bài này chỉ cài npm i framer-motion@4.1.17
 // rồi import vào đây
 function FeedbackList({ handleDelete }) {
-  const {feedback} = useContext(FeedbackContext)
+  const {feedback, isLoading} = useContext(FeedbackContext)
 
-  if (!feedback || feedback.length === 0) {
+  if (!isLoading && (!feedback || feedback.length ===0)) {
     return <p>no feedback yet</p>
   }
 
-  return (
+  return isLoading?(<Spinner/>
+  ) : 
+  (
     <div className="feedback-list">
       <AnimatePresence>
         {feedback.map((item) => (
