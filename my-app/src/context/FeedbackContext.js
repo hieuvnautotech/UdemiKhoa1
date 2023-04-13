@@ -19,10 +19,19 @@ export const FeedbackProvider = ({children}) => {
         setFeedback(feedback.map((item) => item.id === id ? {
           ...item, ...updItem } : item))
       }
-      const addFeedback = (newFeedback) => {
-        newFeedback.id = uuidv4();
+      const addFeedback = async (newFeedback) => {
+        const response = await fetch('/feedback', {
+          method: 'POST',
+          headers:{
+            'Content-Type': 'application/json',
+          },
+          body:JSON.stringify(newFeedback),
+        })
+        // newFeedback.id = uuidv4();
         // console.log(newFeedback)
-        setFeedback([newFeedback, ...feedback]);
+        const data = await response.json()
+        // setFeedback([newFeedback, ...feedback]);
+        setFeedback([data, ...feedback]);
       };
       const editFeedback = (item) => {
         setFeedbackEdit({
