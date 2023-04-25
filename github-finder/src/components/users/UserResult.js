@@ -1,5 +1,6 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
+import Spinner from '../layout/Spinner'
 
 function UserResult() {
     const [users, setUsers] = useState([])
