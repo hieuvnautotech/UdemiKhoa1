@@ -1,10 +1,11 @@
 import React from 'react'
 import UserResult from '../components/users/UserResult'
+import UserSearch from '../components/users/UserSearch'
 
 function Home() {
   return (
     <>
-      {/* <h1>{process.env.REACT_APP_GITHUB_TOKEN}</h1> */}
+      <UserSearch/>
       <UserResult/>
     </>
   )
