@@ -28,7 +28,7 @@ export const GithubProvider = ({children}) => {
       },
     });
     const {items} = await response.json();
-    console.log(items);
+    // console.log(items);
     dispatch({
       type: "GET_USERS",
       payload: items,
@@ -48,8 +48,8 @@ export const GithubProvider = ({children}) => {
     if(response.status === 404){
       window.location = '/notfound'
     }else{
-      const {data} = await response.json();
-    console.log(data);
+      const data = await response.json();
+    // console.log(data);
     dispatch({
       type: "GET_USER",
       payload: data,
