@@ -1,42 +1,42 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {FaCodepen, FaStore, FaUserFriends, FaUsers} from 'react-icons/fa'
-import { useEffect, useContext } from 'react'
-import GithubContext from '../context/github/GithubContext'
-import { useParams } from 'react-router-dom'
-import Spinner from '../components/layout/Spinner'
-import RepoList from '../components/repos/RepoList'
+import React from "react";
+import { Link } from "react-router-dom";
+import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
+import { useEffect, useContext } from "react";
+import GithubContext from "../context/github/GithubContext";
+import { useParams } from "react-router-dom";
+import Spinner from "../components/layout/Spinner";
+import RepoList from "../components/repos/RepoList";
 
 function User() {
-  
-    const {getUser, user, loading, getUserRepos, repos} = useContext(GithubContext)
-    const params = useParams()
-    useEffect (() =>{
-        getUser(params.login)
-        getUserRepos(params.login)
-        // console.log('login', user.login)
-    },[])
+  const { getUser, user, loading, getUserRepos, repos } =
+    useContext(GithubContext);
+  const params = useParams();
+  useEffect(() => {
+    getUser(params.login);
+    getUserRepos(params.login);
+    // console.log('login', user.login)
+  }, []);
 
-    const {
-      name,
-      type,
-      avatar_url,
-      location,
-      bio,
-      blog,
-      twitter_username,
-      login,
-      html_url,
-      followers,
-      following,
-      public_repos,
-      public_gists,
-      hireable,
-    } = user
+  const {
+    name,
+    type,
+    avatar_url,
+    location,
+    bio,
+    blog,
+    twitter_username,
+    login,
+    html_url,
+    followers,
+    following,
+    public_repos,
+    public_gists,
+    hireable,
+  } = user;
 
-    if(loading){
-      return <Spinner/>
-    }
+  if (loading) {
+    return <Spinner />;
+  }
   return (
     <div className="w-full mx-auto lg:w-10/12">
       <div className="mb-4">
@@ -150,15 +150,10 @@ function User() {
             {public_gists}
           </div>
         </div>
-        <RepoList repos={repos}/>
-
+        <RepoList repos={repos} />
       </div>
-
-      
-        
-      
     </div>
   );
 }
 
-export default User
+export default User;
