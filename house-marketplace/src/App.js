@@ -1,6 +1,7 @@
 import './App.css';
 import { getDatabase, ref, child, get } from "firebase/database";
 import {database} from './firebase'
+import Category from './pages/Category'
 
 
 
@@ -18,7 +19,7 @@ function App() {
   });
   return (
     <div>
-      asdasd
+      <Category/>
     </div>
   );
 }
