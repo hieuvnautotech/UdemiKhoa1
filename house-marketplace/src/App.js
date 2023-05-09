@@ -5,6 +5,7 @@ import {database} from './firebase'
 
 
 function App() {
+
   const dbRef = ref(database);
   get(child(dbRef, `users`)).then((snapshot) => {
     if (snapshot.exists()) {
