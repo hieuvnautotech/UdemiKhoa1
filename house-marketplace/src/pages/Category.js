@@ -1,4 +1,4 @@
-import { database } from "../firebase";
+import { db } from "../firebase.config";
 import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -22,10 +22,16 @@ function Category() {
     const fetchListings = async () => {
         try {
           //get ref
-            const listingsRef = collection(database, 'users');
+            const listingsRef = collection(db, 'listings');
           // create a query
+          const q = query(
+            listingsRef,
+            where("type", "==", params.categoryName),
+            orderBy("timestamp", "desc"),
+            limit(10)
+          );
       } catch (error) {}
-    };
+    }; 
   });
   return <div>Category</div>;
 }
