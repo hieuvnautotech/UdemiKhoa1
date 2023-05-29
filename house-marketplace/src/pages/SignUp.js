@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import {getAuth, createUserWithEmailAndPassword, updateProfile} from 'firebase/auth'
-import {db} from '../firebase.config'
+import {setDoc, doc, serverTimestamp} from 'firebase/firestore'
+import {db} from '../firebase.config' 
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg";
 import visibilityIcon from "../assets/svg/visibilityIcon.svg";
@@ -35,6 +36,13 @@ function SignUp() {
         displayName: name,
 
       })
+
+      const formDataCopy = {...formData}
+      delete formDataCopy.password
+      formDataCopy.timestamp = serverTimestamp()
+
+      await setDoc(doc(db, 'user', user.uid), formDataCopy)
+
       navigate('/')
     }catch(error){
       console.log(error)
