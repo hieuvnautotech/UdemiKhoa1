@@ -1,15 +1,10 @@
 import React from "react";
-import spinner from "../../../github-finder/src/components/layout/assets/spinner.gif";
+// import spinner from "../../../github-finder/src/components/layout/assets/spinner.gif";
 
 function Spinner() {
   return (
-    <div className="w-100 mt-20">
-      <img
-        width={180}
-        src={spinner}
-        alt="Loading..."
-        className="text-center mx-auto"
-      />
+    <div className="loadingSpinnerContainer">
+        <div className="loadingSpinner"></div>
     </div>
   );
 }
